@@ -1,29 +1,83 @@
 <!DOCTYPE html>
 
 <html ng-app="BusToHack">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap-theme.min.css">
-        <link href="css/main.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet">
 
-        <script type="text/javascript" src="dependencies/angular/angular.min.js"></script>
-        <script type="text/javascript" src="dependencies/angular-resource/angular-resource.js"></script>
-        <script type="text/javascript" src="dependencies/angular-route/angular-route.js"></script>
-        <script type="text/javascript" src="dependencies/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="dependencies/angular/angular.min.js"></script>
+    <script type="text/javascript" src="dependencies/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="dependencies/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="dependencies/angular-animate/angular-animate.js"></script>
 
-        <script type="text/javascript" src="js/app.js"></script>    
-    </head>
+    <script type="text/javascript" src="js/app.js"></script>    
+</head>
 
 <body ng-controller="mainCtrl">
-    
-    <div class="header">
+
+    <!-- <div class="header">
         <div class="container">
             <div class="title"></div>
+            <div ng-view></div>
+        </div>
+    </div> -->
+    <div id="header">
+        <ul id="nav">
+            <li class="navItem" id="logoContainer"><img id="logo" src="../logo.png"></li>
+            <li class="navItem" id="loginContainer"><div id="login">Login!</div></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
+        </div>
+        <div class="hackathon">
+            <img src="../delta.png" alt="" class="hackLogo">
+            <p class="hackName">DeltaHacks</p>
+            <div class="hackStatus">Accepted</div>
         </div>
     </div>
-    
-    <div ng-view></div>
 
 </body>
 
