@@ -1,20 +1,30 @@
-<html>
-<head>
-<link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap-theme.min.css">
+<!DOCTYPE html>
 
-<script type="text/javascript" src="dependencies/angular/angular.js"></script>
-<script type="text/javascript" src="dependencies/angular-resource/angular-resource.js"></script>
-<script type="text/javascript" src="dependencies/angular-route/angular-route.js"></script>
+<html ng-app="BusToHack">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="dependencies/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link href="css/main.css" rel="stylesheet">
 
-<script type="text/javascript" src="js/app.js"></script>    
+        <script type="text/javascript" src="dependencies/angular/angular.min.js"></script>
+        <script type="text/javascript" src="dependencies/angular-resource/angular-resource.js"></script>
+        <script type="text/javascript" src="dependencies/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="dependencies/angular-animate/angular-animate.js"></script>
 
-<!-- Styles -->
-<link href="/style.css" rel="stylesheet">
-</head>
+        <script type="text/javascript" src="js/app.js"></script>    
+    </head>
 
-<body>
-<%= yield %>
+<body ng-controller="mainCtrl">
+    
+    <div class="header">
+        <div class="container">
+            <div class="title"></div>
+        </div>
+    </div>
+    
+    <div ng-view></div>
+
 </body>
 
 </html>

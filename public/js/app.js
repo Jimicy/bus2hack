@@ -1,19 +1,27 @@
-var BusToHack = angular.module('BusToHack',['ngRoute', 'ngResource', 'ngAnimate'])
+var BusToHack = angular.module('BusToHack',['ngRoute'])
 
 BusToHack.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'templates/landingpage.html',
-        controller: 'LandCtrl'
-      })
+        templateUrl: 'templates/login.html',
+        controller: 'landCtrl'
+      }).
       otherwise({
         redirectTo: '/'
-      });
-  }]);
+      })
+  }])
 
-BusToHack.controller('LandCtrl', ["$scope", function($scope){
-
-    $scope.text = 'hello';
+BusToHack.controller('loginCtrl', ["$scope", function($scope){
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
     
+    $scope.login = function(){
+        
+    }
+    
+}])
+
+BusToHack.controller('mainCtrl',["$scope", function($scope){
 }])
