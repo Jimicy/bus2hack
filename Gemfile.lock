@@ -16,6 +16,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
+    bcrypt (3.1.10)
     bond (0.5.1)
     buftok (0.2.0)
     builder (3.2.2)
@@ -80,12 +81,15 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activerecord
+  bcrypt
   json
   pg
   shotgun
@@ -94,3 +98,4 @@ DEPENDENCIES
   sinatra-jsonp
   tux
   twitter
+  warden
