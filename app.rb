@@ -54,6 +54,14 @@ class Bus2Hack < Sinatra::Application
     end
   end
 
+  get "/addevent" do
+    erb :'addEvent'
+  end
+
+  post 'addevent' do
+    # No idea how to do this
+  end
+
   get '/login' do
     erb :'login'
   end
