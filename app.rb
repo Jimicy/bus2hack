@@ -24,6 +24,10 @@ class Bus2Hack < Sinatra::Application
   get "/register" do
     erb :'register'
   end
+    
+  get "/profile" do
+    erb :'profile'
+  end    
 
   post 'register' do
     email = params['email']
