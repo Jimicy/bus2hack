@@ -44,3 +44,28 @@ html,body{
     border-color: #333;
     border-width: 1px;
 }
+
+.profile-box {
+    background-color: rgba(50,50,50,0.7);
+    height: 800px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.editProfile{
+    color:#357EC7 ;
+    cursor: pointer;
+}
+.editProfile:hover{
+    text-decoration: underline;
+}
+
+.editprof input{
+    color:#000;
+}
+
+.ui-datepicker-calendar{
+    color:#fff;
+}
+
+
