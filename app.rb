@@ -17,9 +17,34 @@ class Bus2Hack < Sinatra::Application
     # erb :'index'
   end
 
-  get "/protected_pages" do
+  get "/users/:id" do
     check_authentication
     "you are authenticated and on a protected_pages"
+  end
+
+  post 'register' do
+    email = params['email']
+    password = params['password']
+    first_name = params['first_name']
+    last_name = params['last_name']
+    school = params['school']
+    passport_expiry_date = Time.parse(params['passport_expiry_date'])
+    unconfirmed_emails = [email]
+
+    if User.find_by(email: params['email']).nil?
+      User.new(email: email,
+               password: password,
+               first_name: first_name,
+               last_name: last_name,
+               school: school,
+               passport_expiry_date: passport_expiry_date,
+               confirmed_emails: [],
+               unconfirmed_emails: unconfirmed_emails,
+               bus_coordinator: "false")
+    else
+      #already registered
+      puts "user already registed"
+    end
   end
 
   get '/login' do
