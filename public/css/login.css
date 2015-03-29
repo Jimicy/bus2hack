@@ -1,0 +1,51 @@
+body{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(236,236,236);
+}
+#login{
+    margin: 5% auto;
+    width: 30vw;
+    height: 60vh;
+    text-align: center;
+    background-color: rgba(65, 131, 215,1.0);
+    border-radius: 3px;
+}
+form{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#title{
+  letter-spacing: 2px;
+}
+input{
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    display: block;
+    border-radius: 5px;
+    border-color: black;
+    padding: 5px;
+    background-color: rgba(65, 131, 215,1.0);
+}
+#loginBtn{
+  margin: 0 auto;
+  margin-bottom: 3%;
+  background-color: rgba(210, 77, 87,1.0);
+  width: 34%;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+}
+#forgotten{
+	font-size: 0.5em;
+	margin: 0 auto;
+	letter-spacing: 1px;
+	/*text-decoration: underline;*/
+	/*border-bottom: 1px white solid;*/
+	/*width: 34%;*/
+}
+span{
+	/*text-decoration: underline;*/
+	border-bottom: 1px white solid;
+}
