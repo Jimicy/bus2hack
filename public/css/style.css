@@ -20,7 +20,7 @@ html,body{
     border-color:#000;
 }
 
-.login-page {
+.login-page, .add-page {
     background-image: url(../pretty.jpeg);
     background-size: cover;
     height: 100%;
@@ -31,7 +31,7 @@ html,body{
     padding-top: 80px;
 }
 
-.login-box {
+.login-box, .add-box {
     margin-top: 100px;
     background-color: rgba(50,50,50,0.7);
     border-radius: 5px;
