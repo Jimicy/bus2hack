@@ -13,7 +13,7 @@ require './models/bus'
 
 class Bus2Hack < Sinatra::Application
   get '/' do
-    erb :'index'
+    erb :'login'
   end
 
   get "/users/:id" do
