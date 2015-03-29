@@ -17,12 +17,15 @@ class CreateUser < ActiveRecord::Migration
     create_table :hackathons do |t|
       t.string :name
       t.datetime :date
+      t.string :location
+      t.text :description
       t.timestamps null: false
     end
 
     create_table :hackathon_statuses do |t|
       t.belongs_to :user, index: true
       t.belongs_to :bus, index: true
+      t.belongs_to :hackathon, index: true
       t.string :status
       t.timestamps null: false
     end

@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'warden'
+require 'json'
 
 #config
 require './config/environments'
@@ -17,33 +18,66 @@ class Bus2Hack < Sinatra::Application
     # erb :'index'
   end
 
+  get '/hackathons' do
+    content_type :json
+
+    hackathons = []
+
+    if warden_handler.authenticated?
+      Hackathon.all.each do |hackathon|
+        user = current_user
+
+        p user.hackathon_statuses.find_by(hackathon_id: hackathon.id)
+
+        hackathon_status = user.hackathon_statuses.find_by(hackathon_id: hackathon.id)
+
+        if hackathon_status
+          status = hackathon_status.status
+        else
+          status = "apply"
+        end
+
+        hackathon_json = {name: hackathon.name,
+                          date: hackathon.date,
+                          location: hackathon.location,
+                          description: hackathon.description,
+                          status: status}
+
+        hackathons << hackathon_json
+      end
+    end
+
+    hackathons.to_json
+  end
+
   get "/users/:id" do
     check_authentication
     "you are authenticated and on a protected_pages"
   end
 
-  post 'register' do
+  put "/users/id" do
+    user = User.find_by_id(email: params['email']).nil?
+    user.first_name = params['first_name']
+    user.last_name = params['last_name']
+    user.school = params['school']
+    user.passport_expiry_date = Time.parse(params['passport_expiry_date'])
+    user.save
+  end
+
+  post '/register' do
     email = params['email']
     password = params['password']
-    first_name = params['first_name']
-    last_name = params['last_name']
-    school = params['school']
-    passport_expiry_date = Time.parse(params['passport_expiry_date'])
     unconfirmed_emails = [email]
 
     if User.find_by(email: params['email']).nil?
       User.new(email: email,
                password: password,
-               first_name: first_name,
-               last_name: last_name,
-               school: school,
-               passport_expiry_date: passport_expiry_date,
                confirmed_emails: [],
                unconfirmed_emails: unconfirmed_emails,
                bus_coordinator: "false")
     else
       #already registered
-      puts "user already registed"
+      puts "Please confirm your email"
     end
   end
 
