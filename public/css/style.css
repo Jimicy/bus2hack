@@ -20,11 +20,13 @@ html,body{
     border-color:#000;
 }
 
-.login-page, .add-page {
+.login-page, .page {
     background-image: url(../pretty.jpeg);
+    overflow: scroll;
     background-size: cover;
     height: 100%;
     width: 100%;
+    color: white;
 }
 
 .content {
@@ -43,4 +45,45 @@ html,body{
     border-style: solid;
     border-color: #333;
     border-width: 1px;
+}
+.contBox{
+    text-align: center;
+    background-color: rgba(50,50,50,0.7);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+#bigTitle{
+    font-size: 5em;
+}
+#mNav{
+    list-style-type: none;
+    padding-left: 0;
+    width: 14%;
+    margin: 0 auto 0 auto;
+}
+#mNav > li{
+    display: inline-block;
+}
+.tab{
+    padding: 2px;
+}
+#userContainer{
+    margin: 0 auto;
+    width: 60%;
+    height: 60vh;
+    overflow: scroll;
+    border: white solid 1px;
+    border-radius: 5px;
+}
+table{
+    margin: 0 auto;
+    width: 100%;
+}
+td{
+    border-right: solid white 1px;
+}
+button{
+    color: black;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }

@@ -62,6 +62,10 @@ class Bus2Hack < Sinatra::Application
     # No idea how to do this
   end
 
+  get "/manage" do
+    erb :'manage'
+  end
+
   get '/login' do
     erb :'login'
   end
