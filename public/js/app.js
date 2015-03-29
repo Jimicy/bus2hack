@@ -3,25 +3,26 @@ var BusToHack = angular.module('BusToHack',['ngRoute'])
 BusToHack.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/', {
+      when('/login', {
         templateUrl: 'templates/login.html',
-        controller: 'landCtrl'
-      }).
+        controller: 'loginCtrl'      }).
       otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       })
   }])
 
-BusToHack.controller('loginCtrl', ["$scope", function($scope){
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-    
-    $scope.login = function(){
-        
+BusToHack.controller('loginCtrl', ["$scope","$http", function($scope,$http){
+    $scope.login = function (){
+        $http.post('/session',{"username":$scope.username, "password":$scope.password}).success(function(data){
+            console.log(data)
+        })
     }
     
 }])
 
-BusToHack.controller('mainCtrl',["$scope", function($scope){
+BusToHack.controller('regCtrl',["$scope", function($scope){
+    $scope.isLoggedIn = false;
+}])
+
+BusToHack.controller('landCtrl',["$scope", function($scope){
 }])

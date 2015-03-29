@@ -1,0 +1,46 @@
+html,body{
+    height: 100%;
+}
+.title {
+    background-image: url(../logo.png);
+    height: 80px;
+    width: 160px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header {
+    background-color: rgba(50,50,50,0.8);
+    position: fixed;
+    height: 80px;
+    width:100%;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color:#000;
+}
+
+.login-page {
+    background-image: url(../pretty.jpeg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    padding-top: 80px;
+}
+
+.login-box {
+    margin-top: 100px;
+    background-color: rgba(50,50,50,0.7);
+    border-radius: 5px;
+    padding: 30px;
+    padding-top:0px; 
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #333;
+    border-width: 1px;
+}
