@@ -13,8 +13,7 @@ require './models/bus'
 
 class Bus2Hack < Sinatra::Application
   get '/' do
-    "hello world"
-    # erb :'index'
+    erb :'index'
   end
 
   get "/protected_pages" do
