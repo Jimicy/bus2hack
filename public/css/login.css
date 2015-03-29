@@ -2,13 +2,17 @@ body{
   color: white;
   font-family: 'Roboto', sans-serif;
   background-color: rgb(236,236,236);
+  background-image: url('../pretty.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+
 }
 #login{
     margin: 5% auto;
     width: 30vw;
     height: 60vh;
     text-align: center;
-    background-color: rgba(65, 131, 215,1.0);
+    background-color: rgba(65, 131, 215,0.4);
     border-radius: 3px;
 }
 form{
@@ -18,6 +22,10 @@ form{
 }
 #title{
   letter-spacing: 2px;
+  color: rgba(210, 77, 87,1.0);
+}
+#title > span{
+	color: white;
 }
 input{
     color: white;
@@ -25,9 +33,25 @@ input{
     margin-bottom: 5%;
     display: block;
     border-radius: 5px;
-    border-color: black;
+    /*border-color: rgba(255,255,255,0.5);*/
+    border: 0px;
     padding: 5px;
-    background-color: rgba(65, 131, 215,1.0);
+    background-color: rgba(65, 131, 215,0.6);
+}
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
 }
 #loginBtn{
   margin: 0 auto;
@@ -45,7 +69,7 @@ input{
 	/*border-bottom: 1px white solid;*/
 	/*width: 34%;*/
 }
-span{
+#forgotten > span{
 	/*text-decoration: underline;*/
 	border-bottom: 1px white solid;
 }
