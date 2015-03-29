@@ -8,6 +8,8 @@ gem "sinatra-activerecord"
 gem "twitter"
 gem "sinatra-jsonp"
 gem "json"
+gem "bcrypt"
+gem "warden"
 
 group :development do
   gem "shotgun"
