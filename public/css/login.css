@@ -57,13 +57,21 @@ input{
 #loginBtn{
   margin: 0 auto;
   margin-bottom: 3%;
-  background-color: rgba( 135, 211, 124,1.0);
+  background-color: rgba( 135, 211, 124,.5);
+  width: 34%;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+}
+#loginBtn:hover{
+  margin: 0 auto;
+  margin-bottom: 3%;
+  background-color: rgba( 135, 211, 124,1);
   width: 34%;
   padding: 10px 5px 10px 5px;
   border-radius: 5px;
 }
 #forgotten{
-	font-size: 0.5em;
+	font-size: 0.6em;
 	margin: 0 auto;
 	letter-spacing: 1px;
 	/*text-decoration: underline;*/
@@ -73,4 +81,16 @@ input{
 #forgotten > span{
 	/*text-decoration: underline;*/
 	border-bottom: 1px white solid;
+}
+#register{
+  font-size: 0.8em;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  /*text-decoration: underline;*/
+  /*border-bottom: 1px white solid;*/
+  /*width: 34%;*/
+}
+#register > span{
+  /*text-decoration: underline;*/
+  border-bottom: 1px white solid;
 }
