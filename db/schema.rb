@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150328072104) do
   create_table "buses", force: :cascade do |t|
     t.integer  "hackathon_id"
     t.string   "school"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "buses", ["hackathon_id"], name: "index_buses_on_hackathon_id", using: :btree
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20150328072104) do
     t.integer  "user_id"
     t.integer  "bus_id"
     t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "hackathon_statuses", ["bus_id"], name: "index_hackathon_statuses_on_bus_id", using: :btree
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20150328072104) do
   create_table "hackathons", force: :cascade do |t|
     t.string   "name"
     t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,10 +50,11 @@ ActiveRecord::Schema.define(version: 20150328072104) do
     t.string   "last_name"
     t.string   "school"
     t.datetime "passport_expiry_date"
-    t.text     "confirmed_emails",     default: [], array: true
-    t.text     "unconfirmed_emails",   default: [], array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "confirmed_emails",     default: [],              array: true
+    t.text     "unconfirmed_emails",   default: [],              array: true
+    t.string   "bus_coordinator"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
 end
