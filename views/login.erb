@@ -1,15 +1,36 @@
-<form action="/session" method="post">
-  <div>
-    <label for="email">E-mail:</label>
-    <input type="email" name="email" />
-  </div>
+<div class="login-page content">
 
-  <div>
-    <label for="password">Password:</label>
-    <input type="text" name="password" />
-  </div>
+    <div class="container">
+    
+        <div class="login-box">
+            <h3 style="color:#fff; margin-bottom:0;">Login / Register:</h3> 
+            <br />
+            
+            <input type="email" class="form-control" id="username-in" placeholder="Enter email" style="margin-bottom:10px;"/>
+            <input type="password" class="form-control" id="password-in"  placeholder="Password"  style="margin-bottom:10px;"/>
+            <button type="submit" class="btn btn-default" value="session" id="loginbutton">Log Me In!</button>
+            <button type="submit" class="btn btn-default" value="register" id="registerbutton">Register Me!</button>
+        </div>
+        
+    </div>
 
-  <div class="button">
-    <button type="submit">Send your message</button>
-  </div>
-</form>
+</div>
+<script>
+
+    //create listeners for register and login buttons
+    //inside listeners, read values from email and password field
+    //ajax post
+    
+$( "#loginbutton, #registerbutton" ).click(function() {
+    
+    $.ajax({
+      type: "POST", 
+      url: $(this).val(),
+      data: {"username":$('#username-in').val(),"password":$('#password-in').val()}
+    }).done(function() {
+        alert('hi')
+    });
+    
+})
+    
+</script>

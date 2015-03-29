@@ -1,0 +1,97 @@
+<script type="text/javascript" src="dependencies/angular/angular.min.js"></script>
+<script>
+var profile = angular.module('profile', [])
+profile.controller('profileCtrl', ["$scope","$http",function($scope, $http){
+    $scope.profile = {
+        "imgsrc":"https://placekitten.com/g/175/200",
+        "fname":"Jimmy",
+        "lname":"Wang",
+        "email":"jimbo@yo.ca",
+        "contact_email":"hackyjim@lolwang.co",
+        "school":"McMaster University",
+        "lname":"Wang",
+    }
+    $scope.editMode = false;
+    $scope.edit = function(){
+        $scope.editMode = !($scope.editMode);
+        $http.post('users', $scope.profile)
+    }
+}])
+
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
+</script>
+
+
+<div class="login-page content">
+
+    <div class="profile-box" ng-app="profile" style="position:fixed">
+        
+        <div class="container" ng-controller="profileCtrl">
+            <div style="padding:40px; width:100%;">
+                <div class="row" style="color:#fff;">
+                    <div class="col-xs-9 col-sm-3">
+                        <img ng-src="{{profile.imgsrc}}" class="thumbnail pull-right" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row" ng-show="!editMode">
+                            
+                            <div class="col-xs-12">
+                                <h1>{{profile.fname + " " + profile.lname}}</h1>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Username:</b> {{profile.email}}</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Password:</b> ******</p>
+                            </div>
+                            
+                            <div class="col-xs-12">
+                                <p><b>Contact Email:</b> {{profile.contact_email}}</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>School:</b> {{profile.school}}</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Passport Expiration Time:</b> {{profile.passport}}</p>
+                            </div> 
+                            
+                        </div>
+                        
+                        <div class="row editprof" ng-show="editMode">
+                            <div class="col-xs-12">
+                                <b>First Name</b><input ng-model="profile.fname"class="form-control" />
+                            </div>
+                            <div class="col-xs-12">
+                                <b>Last Name</b><input ng-model="profile.lname"class="form-control" />
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Username:</b> <input ng-model="profile.email" class="form-control"/></p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Password:</b> <input ng-model="profile.pass"  class="form-control"/></p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Contact Email:</b> <input ng-model="profile.contact_email" class="form-control"/></p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>School:</b> <input ng-model="profile.school" class="form-control"/></p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><b>Passport Expiration Time: &nbsp; </b><input ng-model="profile.passport" id="datepicker" placeholder="Pick a Date"/></p>
+                            </div> 
+                            
+                        </div>
+                        
+                        <p class="editProfile" ng-click="edit()">Edit Profile</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

@@ -14,8 +14,7 @@ require './models/bus'
 
 class Bus2Hack < Sinatra::Application
   get '/' do
-    "hello world"
-    # erb :'index'
+    erb :'login'
   end
 
   get '/hackathons' do
@@ -54,6 +53,14 @@ class Bus2Hack < Sinatra::Application
     check_authentication
     "you are authenticated and on a protected_pages"
   end
+    
+  get "/register" do
+    erb :'register'
+  end
+    
+  get "/profile" do
+    erb :'profile'
+  end    
 
   put "/users/id" do
     user = User.find_by_id(email: params['email']).nil?
@@ -79,6 +86,18 @@ class Bus2Hack < Sinatra::Application
       #already registered
       puts "Please confirm your email"
     end
+  end
+
+  get "/addevent" do
+    erb :'addEvent'
+  end
+
+  post 'addevent' do
+    # No idea how to do this
+  end
+
+  get "/manage" do
+    erb :'manage'
   end
 
   get '/login' do

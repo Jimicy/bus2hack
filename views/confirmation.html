@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="../public/css/confirmation.css" rel="stylesheet">
+
+    <link href="../public/css/login.css" rel="stylesheet">
+    <title>Bus2hack | Confirm</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="row">
+    <div class="col-xs-6">
+      
+      <a class="navbar-brand" href="#">bus2hack</a>
+
+    </div>
+
+<div class="col-xs-6">
+    <ul class="nav navbar-nav navbar-right pull-right">
+      <li><a href="#">Profile</a></li>
+    </ul>
+</div>
+  </div><!-- /.container-fluid -->
+</nav>
+    
+<div>
+    <a href="#openModal">Open Modal</a>
+
+<div id="openModal" class="modalDialog">
+    <div>   <a href="#close" title="Close" class="close">X</a>
+
+            <h2 style="text-weight:bold">Are you sure you do not want to attend? </h2>
+
+        <p>This is an unreversable action. Your spot will be forfeit to the next available hacker.</p>
+        <p>Are you sure you don't want to attend this hackathon.</p>
+        <form action="">
+          <label style="position:absolute; bottom: 1px; left: 40px;" for="male">I confirm that I will <span>NOT</span> be attending this hackathon.</label>
+          <input style="position:absolute; bottom: 10px; left: 10px;" type="checkbox" name="sex" id="male" value="male"><br>
+          <button class="confirm" type="button">Confirm.</button>
+        </form>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>

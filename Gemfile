@@ -10,6 +10,7 @@ gem "sinatra-jsonp"
 gem "json"
 gem "bcrypt"
 gem "warden"
+gem 'mandrill-api'
 
 group :development do
   gem "shotgun"

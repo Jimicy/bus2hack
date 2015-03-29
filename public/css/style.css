@@ -1,0 +1,114 @@
+html,body{
+    height: 100%;
+}
+.title {
+    background-image: url(../logo.png);
+    height: 80px;
+    width: 160px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header {
+    background-color: rgba(50,50,50,0.8);
+    position: fixed;
+    height: 80px;
+    width:100%;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color:#000;
+}
+
+.login-page, .page {
+    background-image: url(../pretty.jpeg);
+    overflow: scroll;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.content {
+    padding-top: 80px;
+}
+
+.login-box, .add-box {
+    margin-top: 100px;
+    background-color: rgba(50,50,50,0.7);
+    border-radius: 5px;
+    padding: 30px;
+    padding-top:0px; 
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #333;
+    border-width: 1px;
+}
+
+.profile-box {
+    background-color: rgba(50,50,50,0.7);
+    height: 800px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.editProfile{
+    color:#357EC7 ;
+    cursor: pointer;
+}
+.editProfile:hover{
+    text-decoration: underline;
+}
+
+.editprof input{
+    color:#000;
+}
+
+.ui-datepicker-calendar{
+    color:#fff;
+}
+
+
+.contBox{
+    text-align: center;
+    background-color: rgba(50,50,50,0.7);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+#bigTitle{
+    font-size: 5em;
+}
+#mNav{
+    list-style-type: none;
+    padding-left: 0;
+    width: 14%;
+    margin: 0 auto 0 auto;
+}
+#mNav > li{
+    display: inline-block;
+}
+.tab{
+    padding: 2px;
+}
+#userContainer{
+    margin: 0 auto;
+    width: 60%;
+    height: 60vh;
+    overflow: scroll;
+    border: white solid 1px;
+    border-radius: 5px;
+}
+table{
+    margin: 0 auto;
+    width: 100%;
+}
+td{
+    border-right: solid white 1px;
+}
+button{
+    color: black;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
