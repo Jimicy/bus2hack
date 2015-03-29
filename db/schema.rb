@@ -17,35 +17,36 @@ ActiveRecord::Schema.define(version: 20150328072104) do
   enable_extension "plpgsql"
 
   create_table "buses", force: :cascade do |t|
-    t.string   "name"
+    t.integer  "hackathon_id"
+    t.string   "school"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "buses", ["hackathon_id"], name: "index_buses_on_hackathon_id", using: :btree
+
   create_table "hackathon_statuses", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "hackathon_id"
+    t.integer  "bus_id"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "hackathon_statuses", ["hackathon_id"], name: "index_hackathon_statuses_on_hackathon_id", using: :btree
+  add_index "hackathon_statuses", ["bus_id"], name: "index_hackathon_statuses_on_bus_id", using: :btree
   add_index "hackathon_statuses", ["user_id"], name: "index_hackathon_statuses_on_user_id", using: :btree
 
   create_table "hackathons", force: :cascade do |t|
-    t.integer  "bus_id"
     t.string   "name"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "hackathons", ["bus_id"], name: "index_hackathons_on_bus_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "school"
     t.datetime "passport_expiry_date"
     t.text     "confirmed_emails",     default: [], array: true
     t.text     "unconfirmed_emails",   default: [], array: true
