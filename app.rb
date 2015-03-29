@@ -20,6 +20,10 @@ class Bus2Hack < Sinatra::Application
     check_authentication
     "you are authenticated and on a protected_pages"
   end
+    
+  get "/register" do
+    erb :'register'
+  end
 
   post 'register' do
     email = params['email']
